@@ -1,0 +1,19 @@
+name: Run on every PR
+
+on:
+  pull_request:
+    branches-ignore:
+      - master
+
+jobs:
+  have-fun:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Echo refs
+        run: |
+          echo ${{ github.ref }}
+          echo ${{ github.head_ref }}
+          echo ${{ github.base_ref }}
