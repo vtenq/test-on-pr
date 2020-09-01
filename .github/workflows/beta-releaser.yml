@@ -17,3 +17,7 @@ jobs:
           echo ${{ github.ref }}
           echo ${{ github.head_ref }}
           echo ${{ github.base_ref }}
+      
+      - name: Echo when head_ref is not master
+        if: ${{ github.head_ref != 'master' }}
+        run: Echo head_ref is not master
